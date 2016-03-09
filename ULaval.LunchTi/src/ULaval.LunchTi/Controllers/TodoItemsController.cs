@@ -1,7 +1,5 @@
 using System.Linq;
 using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Rendering;
-using Microsoft.Data.Entity;
 using ULaval.LunchTi.Models;
 
 namespace ULaval.LunchTi.Controllers
@@ -12,7 +10,7 @@ namespace ULaval.LunchTi.Controllers
 
         public TodoItemsController(ULavalLunchTiContext context)
         {
-            _context = context;    
+            _context = context;
         }
 
         // GET: TodoItemModels

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Data.Entity;
+using Microsoft.Extensions.DependencyInjection;
 using ULaval.LunchTi.Models;
 
 namespace ULaval.LunchTi
@@ -26,12 +26,7 @@ namespace ULaval.LunchTi
             app.UseIISPlatformHandler();
             app.UseStaticFiles();
             app.UseDeveloperExceptionPage();
-            app.UseMvc(routes =>
-            routes.MapRoute(name: "default",
-            template: "{controller=Home}/{action=Index}/{id?}"));
-
-
-
+            app.UseMvc(routes => routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}"));
         }
 
         // Entry point for the application.
