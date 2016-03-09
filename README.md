@@ -29,10 +29,16 @@ Document and demo code of our "LunchTI" for ULaval
 8. TIPS: Add the **Swagger** addin to provide a documentation to your web services
   * Install the Nuget package: `Install-Package Swashbuckle -Pre`
   * Configure `Startup.cs` with `services.AddSwaggerGen()`, `app.UseSwaggerGen()` and `app.UseSwaggerUi()`
-9. TIPS: Add the **Glimpse** addin
-  * TODO
-10. **xUnit**
-  * TODO
+9. TIPS: Add the **Glimpse** addin to have real time diagnostics and insights [48ecd3b](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/48ecd3bfc47858da3b48e0138592c981c3868ea3)
+  * Reference: [Glimpse](http://getglimpse.com/)
+  * Install the Nuget package: `Install-Package Glimpse -Pre`
+  * Configure `Startup.cs` with `using Glimpse`, `services.AddGlimpse()` and `app.UseGlimpse()`
+10. Create a unit test project with **xUnit** [266f515](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/266f5151b256c178b114e6ab1ed1cbf476af4770)
+  * Reference: [Getting Started with xUnit.net - DNX / ASP.NET 5](http://xunit.github.io/docs/getting-started-dnx.html)
+  * Create a new Class Library and modify the `project.json` by changint the `frameworks`entry with `dnx451` and `dnxcore50`
+  * Install the Nuget packages: `Install-Package xunit -Pre`and `nstall-Package xunit.runner.dnx -Pre`
+  * With that you will be able to create and run your first unit test.
+  * TIPS: you could add in the `commands`entry of the `project.json` this line `"test": "xunit.runner.dnx"` to excute this command line: `dnx test`.
 11. **Linux**
   * TODO
 12. **Azure**
