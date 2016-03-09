@@ -24,8 +24,10 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-controller="TodoItems" asp-action="Index">Todo items</a></li>
-                    <li><a href="/runtimeinfo" target="_blank">Runtime info</a></li>
-                    <li><a href="/swagger/ui/index.html" target="_blank">API doc</a></li>
+                    <environment names="Development">
+                        <li><a href="/runtimeinfo" target="_blank">Runtime info</a></li>
+                        <li><a href="/swagger/ui/index.html" target="_blank">API doc</a></li>
+                    </environment>
                 </ul>
             </div>
         </div>
