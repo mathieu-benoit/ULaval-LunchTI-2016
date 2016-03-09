@@ -27,10 +27,13 @@ namespace ULaval.LunchTi
         {
             app.UseIISPlatformHandler();
             app.UseStaticFiles();
-            app.UseDeveloperExceptionPage();
             app.UseMvc(routes => routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}"));
             app.UseSwaggerGen();
             app.UseSwaggerUi();
+
+            //Dev
+            app.UseRuntimeInfoPage();
+            app.UseDeveloperExceptionPage();
         }
 
         // Entry point for the application.
