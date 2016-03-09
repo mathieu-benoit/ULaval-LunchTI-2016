@@ -38,6 +38,7 @@ namespace ULaval.LunchTi
                 app.UseRuntimeInfoPage();
                 app.UseDeveloperExceptionPage();
                 app.UseGlimpse();
+                app.UseBrowserLink();
             }
         }
 
