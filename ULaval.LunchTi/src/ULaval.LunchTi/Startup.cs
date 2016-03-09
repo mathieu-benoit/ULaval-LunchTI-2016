@@ -18,6 +18,8 @@ namespace ULaval.LunchTi
                 .AddSqlServer()
                 .AddDbContext<ULavalLunchTiContext>(options =>
                     options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=ULavalLunchTiContext-0c8ee4b7-1e61-4f48-a290-46160646484d;Trusted_Connection=True;MultipleActiveResultSets=true"));
+
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -27,6 +29,8 @@ namespace ULaval.LunchTi
             app.UseStaticFiles();
             app.UseDeveloperExceptionPage();
             app.UseMvc(routes => routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}"));
+            app.UseSwaggerGen();
+            app.UseSwaggerUi();
         }
 
         // Entry point for the application.
