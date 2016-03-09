@@ -4,6 +4,7 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Data.Entity;
 using Microsoft.Extensions.DependencyInjection;
 using ULaval.LunchTi.Models;
+using ULaval.LunchTi.Services;
 
 namespace ULaval.LunchTi
 {
@@ -22,6 +23,8 @@ namespace ULaval.LunchTi
 
             services.AddSwaggerGen();
             services.AddGlimpse();
+
+            services.AddTransient<ITodoItemsService, TodoItemsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

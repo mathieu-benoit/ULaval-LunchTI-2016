@@ -1,38 +1,36 @@
-using System.Linq;
 using Microsoft.AspNet.Mvc;
 using ULaval.LunchTi.Models;
+using ULaval.LunchTi.Services;
 
 namespace ULaval.LunchTi.Controllers
 {
     public class TodoItemsController : Controller
     {
-        private ULavalLunchTiContext _context;
+        private readonly ITodoItemsService _todoItemsService;
 
-        public TodoItemsController(ULavalLunchTiContext context)
+        public TodoItemsController(ITodoItemsService todoItemsService)
         {
-            _context = context;
+            _todoItemsService = todoItemsService;
         }
 
         // GET: TodoItemModels
         public IActionResult Index()
         {
-            return View(_context.TodoItemModel.ToList());
+            return View(_todoItemsService.GetAll());
         }
 
         // GET: TodoItemModels/Details/5
         public IActionResult Details(int? id)
         {
-            if (id == null)
+            if (!id.HasValue)
             {
                 return HttpNotFound();
             }
-
-            TodoItemModel todoItemModel = _context.TodoItemModel.Single(m => m.Id == id);
+            var todoItemModel = _todoItemsService.Get(id.Value);
             if (todoItemModel == null)
             {
                 return HttpNotFound();
             }
-
             return View(todoItemModel);
         }
 
@@ -49,8 +47,7 @@ namespace ULaval.LunchTi.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.TodoItemModel.Add(todoItemModel);
-                _context.SaveChanges();
+                _todoItemsService.Create(todoItemModel);
                 return RedirectToAction("Index");
             }
             return View(todoItemModel);
@@ -59,12 +56,11 @@ namespace ULaval.LunchTi.Controllers
         // GET: TodoItemModels/Edit/5
         public IActionResult Edit(int? id)
         {
-            if (id == null)
+            if (!id.HasValue)
             {
                 return HttpNotFound();
             }
-
-            TodoItemModel todoItemModel = _context.TodoItemModel.Single(m => m.Id == id);
+            var todoItemModel = _todoItemsService.Get(id.Value);
             if (todoItemModel == null)
             {
                 return HttpNotFound();
@@ -79,8 +75,7 @@ namespace ULaval.LunchTi.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Update(todoItemModel);
-                _context.SaveChanges();
+                _todoItemsService.Update(todoItemModel);
                 return RedirectToAction("Index");
             }
             return View(todoItemModel);
@@ -90,17 +85,15 @@ namespace ULaval.LunchTi.Controllers
         [ActionName("Delete")]
         public IActionResult Delete(int? id)
         {
-            if (id == null)
+            if (!id.HasValue)
             {
                 return HttpNotFound();
             }
-
-            TodoItemModel todoItemModel = _context.TodoItemModel.Single(m => m.Id == id);
+            var todoItemModel = _todoItemsService.Get(id.Value);
             if (todoItemModel == null)
             {
                 return HttpNotFound();
             }
-
             return View(todoItemModel);
         }
 
@@ -109,9 +102,7 @@ namespace ULaval.LunchTi.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            TodoItemModel todoItemModel = _context.TodoItemModel.Single(m => m.Id == id);
-            _context.TodoItemModel.Remove(todoItemModel);
-            _context.SaveChanges();
+            _todoItemsService.Delete(id);
             return RedirectToAction("Index");
         }
     }

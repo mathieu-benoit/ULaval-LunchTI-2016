@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Data.Entity;
 using ULaval.LunchTi.Models;
+using ULaval.LunchTi.Services;
 
 namespace ULaval.LunchTi.Controllers
 {
@@ -11,18 +11,18 @@ namespace ULaval.LunchTi.Controllers
     [Route("api/TodoItems")]
     public class TodoItemsApiController : Controller
     {
-        private ULavalLunchTiContext _context;
+        private readonly ITodoItemsService _todoItemsService;
 
-        public TodoItemsApiController(ULavalLunchTiContext context)
+        public TodoItemsApiController(ITodoItemsService todoItemsService)
         {
-            _context = context;
+            _todoItemsService = todoItemsService;
         }
 
         // GET: api/TodoItemsApi
         [HttpGet]
         public IEnumerable<TodoItemModel> GetTodoItemModel()
         {
-            return _context.TodoItemModel;
+            return _todoItemsService.GetAll();
         }
 
         // GET: api/TodoItemsApi/5
@@ -33,14 +33,11 @@ namespace ULaval.LunchTi.Controllers
             {
                 return HttpBadRequest(ModelState);
             }
-
-            TodoItemModel todoItemModel = _context.TodoItemModel.Single(m => m.Id == id);
-
+            var todoItemModel = _todoItemsService.Get(id);
             if (todoItemModel == null)
             {
                 return HttpNotFound();
             }
-
             return Ok(todoItemModel);
         }
 
@@ -52,17 +49,13 @@ namespace ULaval.LunchTi.Controllers
             {
                 return HttpBadRequest(ModelState);
             }
-
             if (id != todoItemModel.Id)
             {
                 return HttpBadRequest();
             }
-
-            _context.Entry(todoItemModel).State = EntityState.Modified;
-
             try
             {
-                _context.SaveChanges();
+                _todoItemsService.Update(todoItemModel);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -75,7 +68,6 @@ namespace ULaval.LunchTi.Controllers
                     throw;
                 }
             }
-
             return new HttpStatusCodeResult(StatusCodes.Status204NoContent);
         }
 
@@ -87,11 +79,9 @@ namespace ULaval.LunchTi.Controllers
             {
                 return HttpBadRequest(ModelState);
             }
-
-            _context.TodoItemModel.Add(todoItemModel);
             try
             {
-                _context.SaveChanges();
+                _todoItemsService.Create(todoItemModel);
             }
             catch (DbUpdateException)
             {
@@ -104,7 +94,6 @@ namespace ULaval.LunchTi.Controllers
                     throw;
                 }
             }
-
             return CreatedAtRoute("GetTodoItemModel", new { id = todoItemModel.Id }, todoItemModel);
         }
 
@@ -116,31 +105,18 @@ namespace ULaval.LunchTi.Controllers
             {
                 return HttpBadRequest(ModelState);
             }
-
-            TodoItemModel todoItemModel = _context.TodoItemModel.Single(m => m.Id == id);
-            if (todoItemModel == null)
+            var todoItemModel = _todoItemsService.Get(id);
+            if (!TodoItemModelExists(id))
             {
                 return HttpNotFound();
             }
-
-            _context.TodoItemModel.Remove(todoItemModel);
-            _context.SaveChanges();
-
+            _todoItemsService.Delete(id);
             return Ok(todoItemModel);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                _context.Dispose();
-            }
-            base.Dispose(disposing);
         }
 
         private bool TodoItemModelExists(int id)
         {
-            return _context.TodoItemModel.Count(e => e.Id == id) > 0;
+            return _todoItemsService.Get(id) != null;
         }
     }
 }
