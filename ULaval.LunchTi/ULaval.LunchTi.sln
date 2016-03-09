@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ULaval.LunchTi", "src\ULaval.LunchTi\ULaval.LunchTi.xproj", "{A9D3D044-372F-41E2-AE1E-76CB9A8223D0}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ULaval.LunchTi.Tests", "src\ULaval.LunchTi.Tests\ULaval.LunchTi.Tests.xproj", "{A4BB80D7-BA7E-4FCC-BD05-598932D94CD6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +24,16 @@ Global
 		{A9D3D044-372F-41E2-AE1E-76CB9A8223D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9D3D044-372F-41E2-AE1E-76CB9A8223D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9D3D044-372F-41E2-AE1E-76CB9A8223D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4BB80D7-BA7E-4FCC-BD05-598932D94CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4BB80D7-BA7E-4FCC-BD05-598932D94CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4BB80D7-BA7E-4FCC-BD05-598932D94CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4BB80D7-BA7E-4FCC-BD05-598932D94CD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A9D3D044-372F-41E2-AE1E-76CB9A8223D0} = {83BE3354-37CD-4E2E-8563-3612B8E95A27}
+		{A4BB80D7-BA7E-4FCC-BD05-598932D94CD6} = {83BE3354-37CD-4E2E-8563-3612B8E95A27}
 	EndGlobalSection
 EndGlobal
