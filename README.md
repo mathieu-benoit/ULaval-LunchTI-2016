@@ -1,8 +1,10 @@
 # ULaval-LunchTI-2016
 
+Topics: C# | ASP.NET Core 1.0 | MVC 6 | xUnit | Swagger | IoC | Visual Studio Community 2015 | Web API | Linux | Azure | Bootstrap | Gulp
+
 Document and demo code of our "LunchTI" for ULaval
 
-1. Create an empty ASP.NET Core project with Visual Studio.
+1. Create an empty ASP.NET Core project with Visual Studio Community 2015.
 2. Configure the project to use MVC 6:
   * Create Models, Views and Controllers folders
   * Create associated basic Home* items: `HomeController.cs`, `HomeModel.cs` and `Home/Index.cshtml` files.
