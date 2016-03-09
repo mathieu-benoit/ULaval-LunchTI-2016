@@ -13,20 +13,21 @@ Document and demo code of our "LunchTI" for ULaval
 3. Configure the project to use **Entity Framework 7**
   * Install the Nuget packages: `Install-Package EntityFramework.Core –Pre` amd `Install-Package EntityFramework.MicrosoftSqlServer –Pre`
   * TODO
-4. TIPS: Add the error details page
+4. TIPS: Add the error details page [8baa57a](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/8baa57a00d5ec319d2e0f324ff6e5b949a18bb55)
   * Install the Nuget package: `Install-Package Microsoft.AspNet.Diagnostics -Pre`
   * Configure `Startup.cs` with `app.UseDeveloperExceptionPage()`
 5. Generate scaffolding items
   * Install the Nuget packages: `Install-Package Microsoft.Extensions.CodeGenerators.Mvc –Pre` and `Install-Package Microsoft.AspNet.Mvc.TagHelpers -Pre`
   * TODO
-6. TIPS: Add the **staticfiles** to allow access and use of css and javascript files
+6. TIPS: Add the **Static Files** to allow access and use of css and javascript files
+  * Reference: [Working with Static Files](https://docs.asp.net/en/latest/fundamentals/static-files.html)
   * Install the Nuget package: `Install-Package Microsoft.AspNet.StaticFiles -Pre`
   * Configure `Startup.cs` with `app.UseStaticFiles()`
-7. Generate a scaffolding **WebAPI** with MVC 6
+7. Generate a scaffolding **WebAPI** with MVC 6 [85ea32c](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/85ea32c83798fde67d70be49a33e2a61ea81b962)
   * Right click on the `Controllers` folder, click on "Add" and then on "Controller..." and choose "API Controller with actions, using Entity Framework".
   * Fill out the information to create a new `TodoItemsApiController` with the `TodoItemsModel` as "Model class" and `ULavalLunchTiContext` as "Data context class".
   * Go to the generated file to see how to get the list of the items, one specific item, etc.
-8. TIPS: Add the **Swagger** addin to provide a documentation to your web services
+8. TIPS: Add the **Swagger** addin to provide a documentation to your web services [69ab7ae](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/69ab7ae62db74066fbfa08d8246f209e6807241c)
   * Install the Nuget package: `Install-Package Swashbuckle -Pre`
   * Configure `Startup.cs` with `services.AddSwaggerGen()`, `app.UseSwaggerGen()` and `app.UseSwaggerUi()`
 9. TIPS: Add the **Glimpse** addin to have real time diagnostics and insights [48ecd3b](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/48ecd3bfc47858da3b48e0138592c981c3868ea3)
@@ -37,10 +38,21 @@ Document and demo code of our "LunchTI" for ULaval
   * Reference: [Getting Started with xUnit.net - DNX / ASP.NET 5](http://xunit.github.io/docs/getting-started-dnx.html)
   * Create a new Class Library and modify the `project.json` by changint the `frameworks`entry with `dnx451` and `dnxcore50`
   * Install the Nuget packages: `Install-Package xunit -Pre`and `nstall-Package xunit.runner.dnx -Pre`
-  * With that you will be able to create and run your first unit test.
+  * With that you will be able to create and run your first unit test (Test Explorer window in Visual Studio).
   * TIPS: you could add in the `commands`entry of the `project.json` this line `"test": "xunit.runner.dnx"` to excute this command line: `dnx test`.
-11. **Linux**
+11. Implement a **Dependency Injection (DI)**
+  * Reference: [Dependency Injection](https://docs.asp.net/en/latest/fundamentals/dependency-injection.html)
+  * ASP.NET 5 is designed to leverage built-in DI. Some Framework-Provided Services are already exposed during our demo, for example by using `services.AddEntityFramework()` or `services.AddMvc()`.
+  * But you can register your own services like shown in this commit [767bbcf](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/767bbcf4532e3425632def515a0e732387018f17)
+12. Work with **Multiple Environments** [c75b9aa](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/c75b9aa1c6e2dee3c72446bbda4472c58078c85f)
+  * Reference: [Working with Multiple Environments](https://docs.asp.net/en/latest/fundamentals/environments.html)
+  * Configure `Startup.cs` with the new parameter `IHostingEnvironment` of the `Configure` method and then you are able to use `env.IsDevelopment()`, `env.IsStaging()` or `env.IsProduction()`
+  * TIPS: you could also use the `<environment>` tag helper on any cshtml [5ad0b79](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/5ad0b79c4d7a6393fa9e4a056f44b9c9ce042f71)
+13. Use **Gulp** to minify and bundle *.css and *.js files
+  * Reference: [Using Gulp](http://docs.asp.net/en/latest/client-side/using-gulp.html)
   * TODO
-12. **Azure**
+14. Deploy your web app on **Linux**
+  * TODO
+15. Deploy your web app in **Azure**
   * TODO
 
