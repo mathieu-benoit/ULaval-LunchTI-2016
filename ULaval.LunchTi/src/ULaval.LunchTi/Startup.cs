@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Builder;
+﻿using Glimpse;
+using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Data.Entity;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +21,7 @@ namespace ULaval.LunchTi
                     options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=ULavalLunchTiContext-0c8ee4b7-1e61-4f48-a290-46160646484d;Trusted_Connection=True;MultipleActiveResultSets=true"));
 
             services.AddSwaggerGen();
+            services.AddGlimpse();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,6 +37,7 @@ namespace ULaval.LunchTi
             {
                 app.UseRuntimeInfoPage();
                 app.UseDeveloperExceptionPage();
+                app.UseGlimpse();
             }
         }
 
