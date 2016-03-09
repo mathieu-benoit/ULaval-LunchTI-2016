@@ -15,20 +15,22 @@ Document and demo code of our "LunchTI" for ULaval
   * Install the Nuget package: `Install-Package Microsoft.AspNet.Diagnostics -Pre`
   * Configure `Startup.cs` with `app.UseDeveloperExceptionPage()`
 5. Generate scaffolding items
-  * Install the Nuget package: `Install-Package Microsoft.Extensions.CodeGenerators.Mvc –Pre`
+  * Install the Nuget packages: `Install-Package Microsoft.Extensions.CodeGenerators.Mvc –Pre` and `Install-Package Microsoft.AspNet.Mvc.TagHelpers -Pre`
   * TODO
-6. TIPS: Add the TagHelper
+6. TIPS: Add the staticfiles to allow access and use of css and javascript files
+  * Install the Nuget package: `Install-Package Microsoft.AspNet.StaticFiles -Pre`
+  * Configure `Startup.cs` with `app.UseStaticFiles()`
+7. Generate a scaffolding WebAPI with MVC 6
+  * Right click on the `Controllers` folder, click on "Add" and then on "Controller..." and choose "API Controller with actions, using Entity Framework".
+  * Fill out the information to create a new `TodoItemsApiController` with the `TodoItemsModel` as "Model class" and `ULavalLunchTiContext` as "Data context class".
+  * Go to the generated file to see how to get the list of the items, one specific item, etc.
+8. TIPS: Add the Swagger addin to provide a documentation to your web services
+  * Install the Nuget package: `Install-Package Swashbuckle -Pre`
+  * Configure `Startup.cs` with `services.AddSwaggerGen()`, `app.UseSwaggerGen()` and `app.UseSwaggerUi()`
+9. TIPS: Add the Glimpse addin
   * TODO
-7. TIPS: Add the staticfiles
+10. xUnit
   * TODO
-8. Create a WebAPI with MVC 6
-  * TODO
-9. TIPS: Add the Swagger addin
-  * TODO
-10. TIPS: Glimpse
-  * TODO
-11. xUnit
-  * TODO
-12. Linux
+11. Linux
   * TODO
 
