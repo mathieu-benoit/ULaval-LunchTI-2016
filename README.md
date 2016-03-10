@@ -4,7 +4,7 @@ Documentation and demo code of our "LunchTI" for ULaval by exploring the new wor
 
 **C# | ASP.NET Core 1.0 | MVC 6 | Entity Framework 7 | xUnit | Swagger | Dependency Injection | Visual Studio Community 2015 | Web API | Linux | Azure | Bootstrap | Gulp**
 
-Here is the [support of our presentation](https://github.com/nurunquebec/ULaval-LunchTI-2016/blob/master/Universit%C3%A9%20Laval%202016%20-%20Microsoft%20et%20le%20d%C3%A9veloppement%20web%20moderne.pdf).
+Here is the [support of our presentation](https://github.com/nurunquebec/ULaval-LunchTI-2016/blob/master/Universit%C3%A9%20Laval%202016%20-%20Microsoft%20et%20le%20d%C3%A9veloppement%20web%20moderne.pdf) [fr].
 
 Here is the step-by-step (and more) of our demo:
 1. Create an empty **ASP.NET Core** project with **Visual Studio Community** 2015 [c6f337b](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/c6f337b2d067462878685ae5dc3be5ec1f263750)
