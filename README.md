@@ -2,7 +2,7 @@
 
 **C# | ASP.NET Core 1.0 | MVC 6 | Entity Framework 7 | xUnit | Swagger | Dependency Injection | Visual Studio Community 2015 | Web API | Linux | Azure | Bootstrap | Gulp**
 
-Documentation and demo code of our "LunchTI" for ULaval by exploring the new world of ASP.NET Core 1.0
+Documentation and demo code of our "LunchTI" for ULaval by exploring the new world of ASP.NET Core 1.0.
 
 1. Create an empty **ASP.NET Core** project with **Visual Studio Community** 2015 [c6f337b](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/c6f337b2d067462878685ae5dc3be5ec1f263750)
 2. Configure the project to use **MVC 6** [fd9e8fe](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/fd9e8feafa7a75a1ceee942c418c08a0e04c7fa5)
