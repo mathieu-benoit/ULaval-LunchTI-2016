@@ -61,11 +61,12 @@ Here is the step-by-step (and more) of our demo:
 ### 12. Work with **Multiple Environments** [c75b9aa](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/c75b9aa1c6e2dee3c72446bbda4472c58078c85f)
   * Reference: [Working with Multiple Environments](https://docs.asp.net/en/latest/fundamentals/environments.html)
   * Configure `Startup.cs` with the new parameter `IHostingEnvironment` of the `Configure` method and then you are able to use `env.IsDevelopment()`, `env.IsStaging()` or `env.IsProduction()`
-  * TIPS: you could also use the `<environment>` tag helper on any cshtml [5ad0b79](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/5ad0b79c4d7a6393fa9e4a056f44b9c9ce042f71)
+  * TIPS: you could also use the `<environment>` tag helper on any cshtml [5ad0b79](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/5ad0b79c4d7a6393fa9e4a056f44b9c9ce042f71) or [2b02f6a](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/2b02f6a7beeaf48df60d265cf36b013516997400)
 
-### 13. Use **Gulp** to minify and bundle *.css and *.js files
+### 13. Use **Gulp** to minify and bundle *.css and *.js files [2b02f6a](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/2b02f6a7beeaf48df60d265cf36b013516997400)
   * Reference: [Using Gulp](http://docs.asp.net/en/latest/client-side/using-gulp.html)
-  * TODO
+  * Add ```gulpfile.js``` to manage gulp tasks and ```package.json``` to manage javascript packages.
+  * In Visual Studio you can interact with the tasks defined with the window "Task Runner Explorer".
 
 ### 14. Deploy your web app on **Linux**
   * TODO
