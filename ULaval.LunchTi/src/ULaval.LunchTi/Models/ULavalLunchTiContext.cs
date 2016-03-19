@@ -23,6 +23,6 @@ namespace ULaval.LunchTi.Models
         {
         }
 
-        public DbSet<TodoItemModel> TodoItemModel { get; set; }
+        public DbSet<TodoItemModel> TodoItems { get; set; }
     }
 }

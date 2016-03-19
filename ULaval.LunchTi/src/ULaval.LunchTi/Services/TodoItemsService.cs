@@ -15,25 +15,25 @@ namespace ULaval.LunchTi.Services
 
         public void Create(TodoItemModel todoItemModel)
         {
-            _context.TodoItemModel.Add(todoItemModel);
+            _context.TodoItems.Add(todoItemModel);
             _context.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            var todoItemModel = _context.TodoItemModel.Single(m => m.Id == id);
-            _context.TodoItemModel.Remove(todoItemModel);
+            var todoItemModel = _context.TodoItems.Single(m => m.Id == id);
+            _context.TodoItems.Remove(todoItemModel);
             _context.SaveChanges();
         }
 
         public TodoItemModel Get(int id)
         {
-            return _context.TodoItemModel.Single(m => m.Id == id);
+            return _context.TodoItems.Single(m => m.Id == id);
         }
 
         public IEnumerable<TodoItemModel> GetAll()
         {
-            return _context.TodoItemModel.ToList();
+            return _context.TodoItems.ToList();
         }
 
         public void Update(TodoItemModel todoItemModel)
