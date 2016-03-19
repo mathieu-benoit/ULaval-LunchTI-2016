@@ -7,13 +7,27 @@ namespace ULaval.LunchTi.Tests
         [Fact]
         public void PassingTest()
         {
-            Assert.Equal(4, Add(2, 2));
+            //Arrange
+            var expectedResult = 4;
+
+            //Act
+            var result = Add(2, 2);
+
+            //Assert
+            Assert.Equal(expectedResult, result);
         }
 
         [Fact]
         public void FailingTest()
         {
-            Assert.NotEqual(5, Add(2, 2));
+            //Arrange
+            var unExpectedResult = 5;
+
+            //Act
+            var result = Add(2, 2);
+
+            //Assert
+            Assert.NotEqual(unExpectedResult, result);
         }
 
         int Add(int x, int y)
