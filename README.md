@@ -2,7 +2,7 @@
 
 Documentation and demo code of our "LunchTI" for ULaval by exploring the new world of ASP.NET Core 1.0 (RC1).
 
-**C# | ASP.NET Core 1.0 (RC1) | MVC 6 | Entity Framework 7 | xUnit | Swagger | Dependency Injection | Visual Studio Community 2015 | Web API | Linux | Azure | Bootstrap | Gulp**
+**C# | ASP.NET Core 1.0 (RC1) | MVC 6 | Entity Framework 7 | xUnit | Swagger | Dependency Injection (DI) | Visual Studio Community 2015 | Web API | Linux | Azure | Bootstrap | Gulp | Bower**
 
 Here is the [support of our presentation](https://github.com/nurunquebec/ULaval-LunchTI-2016/blob/master/Universit%C3%A9%20Laval%202016%20-%20Microsoft%20et%20le%20d%C3%A9veloppement%20web%20moderne.pdf) [fr].
 
@@ -68,9 +68,15 @@ Here is the step-by-step (and more) of our demo:
   * Add ```gulpfile.js``` to manage gulp tasks and ```package.json``` to manage javascript packages.
   * In Visual Studio you can interact with the tasks defined with the window "Task Runner Explorer".
 
-### 14. Deploy your web app on **Linux**
+### 14. Use **Bower** to manage your client-side packages [5d98647](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/5d9864725f91042e7fe051ce165c3bc8af789e45)
+  * Reference: [Manage Client-Side Packages with Bower](http://docs.asp.net/en/latest/client-side/bower.html)
+  * Add ```bower.json``` to manage packages and also ```.bowerrc``` file to define the directory of the components.
+  * In Visual Studio you can manage your bower packages with the window (right click on the project) "Manage Bower packages...".
+  * Remark: don't forget to change the reference of the js and css libs on your cshtml.
+
+### 15. Deploy your web app on **Linux**
   * TODO
 
-### 15. Deploy your web app in **Azure**
+### 16. Deploy your web app in **Azure**
   * TODO
 
