@@ -1,8 +1,8 @@
 # ULaval-LunchTI-2016
 
-Documentation and demo code of our "LunchTI" for ULaval by exploring the new world of ASP.NET Core 1.0.
+Documentation and demo code of our "LunchTI" for ULaval by exploring the new world of ASP.NET Core 1.0 (RC1).
 
-**C# | ASP.NET Core 1.0 | MVC 6 | Entity Framework 7 | xUnit | Swagger | Dependency Injection | Visual Studio Community 2015 | Web API | Linux | Azure | Bootstrap | Gulp**
+**C# | ASP.NET Core 1.0 (RC1) | MVC 6 | Entity Framework 7 | xUnit | Swagger | Dependency Injection | Visual Studio Community 2015 | Web API | Linux | Azure | Bootstrap | Gulp**
 
 Here is the [support of our presentation](https://github.com/nurunquebec/ULaval-LunchTI-2016/blob/master/Universit%C3%A9%20Laval%202016%20-%20Microsoft%20et%20le%20d%C3%A9veloppement%20web%20moderne.pdf) [fr].
 
