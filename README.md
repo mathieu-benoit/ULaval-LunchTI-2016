@@ -12,24 +12,25 @@ Here is the step-by-step (and more) of our demo:
 ### 2. Configure the project to use **MVC 6** [fd9e8fe](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/fd9e8feafa7a75a1ceee942c418c08a0e04c7fa5)
   * Create Models, Views and Controllers folders
   * Create associated basic Home* items: `HomeController.cs`, `HomeModel.cs` and `Home/Index.cshtml` files.
-  * Install the Nuget package: `Install-Package Microsoft.AspNet.Mvc –Pre`
+  * Install the NuGet package: `Install-Package Microsoft.AspNet.Mvc –Pre`
   * Configure `Startup.cs` with `services.addMvc()` and `app.useMvc()`.
 
 ### 3. Configure the project to use **Entity Framework 7**
-  * Install the Nuget packages: `Install-Package EntityFramework.Core –Pre` amd `Install-Package EntityFramework.MicrosoftSqlServer –Pre`
+  * Install the NuGet packages: `Install-Package EntityFramework.Core –Pre` and `Install-Package EntityFramework.MicrosoftSqlServer –Pre`
   * TODO
+  * TIPS: By installing the NuGet package `Install-Package EntityFramework.InMemory –Pre`, you could define an appsetting to run your application with an InMemory database [168b198](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/168b1980f77dec2102a755c1fbb321f6edafc276)
 
 ### 4. TIPS: Add the error details page [8baa57a](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/8baa57a00d5ec319d2e0f324ff6e5b949a18bb55)
-  * Install the Nuget package: `Install-Package Microsoft.AspNet.Diagnostics -Pre`
+  * Install the NuGet package: `Install-Package Microsoft.AspNet.Diagnostics -Pre`
   * Configure `Startup.cs` with `app.UseDeveloperExceptionPage()`.
 
 ### 5. Generate scaffolding items
-  * Install the Nuget packages: `Install-Package Microsoft.Extensions.CodeGenerators.Mvc –Pre` and `Install-Package Microsoft.AspNet.Mvc.TagHelpers -Pre`.
+  * Install the NuGet packages: `Install-Package Microsoft.Extensions.CodeGenerators.Mvc –Pre` and `Install-Package Microsoft.AspNet.Mvc.TagHelpers -Pre`.
   * TODO
 
 ### 6. TIPS: Add the **Static Files** to allow access and use of css and javascript files
   * Reference: [Working with Static Files](https://docs.asp.net/en/latest/fundamentals/static-files.html)
-  * Install the Nuget package: `Install-Package Microsoft.AspNet.StaticFiles -Pre`
+  * Install the NuGet package: `Install-Package Microsoft.AspNet.StaticFiles -Pre`
   * Configure `Startup.cs` with `app.UseStaticFiles()`.
 
 ### 7. Generate a scaffolding **WebAPI** with MVC 6 [85ea32c](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/85ea32c83798fde67d70be49a33e2a61ea81b962)
@@ -38,20 +39,21 @@ Here is the step-by-step (and more) of our demo:
   * Go to the generated file to see how to get the list of the items, one specific item, etc.
 
 ### 8. TIPS: Add the **Swagger** addin to provide a documentation to your web services [69ab7ae](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/69ab7ae62db74066fbfa08d8246f209e6807241c)
-  * Install the Nuget package: `Install-Package Swashbuckle -Pre`
+  * Install the NuGet package: `Install-Package Swashbuckle -Pre`
   * Configure `Startup.cs` with `services.AddSwaggerGen()`, `app.UseSwaggerGen()` and `app.UseSwaggerUi()`.
 
 ### 9. TIPS: Add the **Glimpse** addin to have real time diagnostics and insights [48ecd3b](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/48ecd3bfc47858da3b48e0138592c981c3868ea3)
   * Reference: [Glimpse](http://getglimpse.com/)
-  * Install the Nuget package: `Install-Package Glimpse -Pre`
+  * Install the NuGet package: `Install-Package Glimpse -Pre`
   * Configure `Startup.cs` with `using Glimpse`, `services.AddGlimpse()` and `app.UseGlimpse()`.
 
 ### 10. Create a unit test project with **xUnit** [266f515](https://github.com/nurunquebec/ULaval-LunchTI-2016/commit/266f5151b256c178b114e6ab1ed1cbf476af4770)
   * Reference: [Getting Started with xUnit.net - DNX / ASP.NET 5](http://xunit.github.io/docs/getting-started-dnx.html)
   * Create a new Class Library and modify the `project.json` by changint the `frameworks`entry with `dnx451` and `dnxcore50`
-  * Install the Nuget packages: `Install-Package xunit -Pre`and `nstall-Package xunit.runner.dnx -Pre`
+  * Install the NuGet packages: `Install-Package xunit -Pre`and `nstall-Package xunit.runner.dnx -Pre`
   * With that you will be able to create and run your first unit test (Test Explorer window in Visual Studio).
   * TIPS: you could add in the `commands`entry of the `project.json` this line `"test": "xunit.runner.dnx"` to excute this command line: `dnx test`.
+  * Remark: The NuGet package "NSubstitute" doesn't support for the moment DNX core.
 
 ### 11. Implement a **Dependency Injection (DI)**
   * Reference: [Dependency Injection](https://docs.asp.net/en/latest/fundamentals/dependency-injection.html)
