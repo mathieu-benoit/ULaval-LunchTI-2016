@@ -45,7 +45,7 @@ namespace ULaval.LunchTi
         {
             app.UseIISPlatformHandler();
             app.UseStaticFiles();
-            app.UseMvc(routes => routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}"));
+            app.UseMvcWithDefaultRoute();
             app.UseSwaggerGen();
             app.UseSwaggerUi();
 
