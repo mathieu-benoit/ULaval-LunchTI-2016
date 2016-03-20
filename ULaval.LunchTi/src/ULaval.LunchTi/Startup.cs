@@ -56,6 +56,10 @@ namespace ULaval.LunchTi
                 app.UseGlimpse();
                 app.UseBrowserLink();
             }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+            }
         }
 
         // Entry point for the application.
