@@ -29,10 +29,21 @@ namespace ULaval.LunchTi
         {
             services.AddMvc();
 
-            services.AddEntityFramework()
-                .AddSqlServer()
-                .AddDbContext<ULavalLunchTiContext>(options =>
+            var useInMemoryDatabase = !string.IsNullOrEmpty(Configuration["Data:UseInMemoryDatabase"]);
+            if (useInMemoryDatabase)
+            {
+                services.AddEntityFramework()
+                    .AddInMemoryDatabase()
+                    .AddDbContext<ULavalLunchTiContext>(options => 
+                    options.UseInMemoryDatabase());
+            }
+            else
+            {
+                services.AddEntityFramework()
+                    .AddSqlServer()
+                    .AddDbContext<ULavalLunchTiContext>(options =>
                     options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+            }
 
             services.AddSwaggerGen();
             services.AddGlimpse();
